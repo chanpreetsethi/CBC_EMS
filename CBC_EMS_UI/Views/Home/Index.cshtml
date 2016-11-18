@@ -1,0 +1,46 @@
+﻿@{
+    ViewBag.Title = "Benefits";
+}
+
+<div id="bodyContainer" ng-app="BenefitApp">
+  
+    <section id="content">
+        <div class="container">
+            <div class="row">
+                <div class="flip-container text-center col-md-12" ng-controller="BenefitCtrl" ng-init=""> 
+                    <ul>
+                        <li>
+                            <label for="username">User Name</label>
+                            <input type="text" name="username" ng-model="userName" placeholder="yourname@email.com" >
+                        </li>
+                        <li>
+                            <label for="password">Password</label>
+                            <input type="password" name="password" ng-model = "password" placeholder="password" >
+                        </li>
+                        <li>
+                            <input type="button" value="Login" ng-click="validateUser()">
+                        </li>
+
+                        <li>
+                            <input type="button" value="Get Employee Info" ng-show="ShowEmployeeButton" ng-click="GetEmployeeInfo()">
+                        </li>
+                    </ul>
+                    <ul>
+                    </ul>
+                    <span ng-show="ShowEmployeeData">Welcome <br />User: {{EmployeeName}}</span><br />
+                    <span ng-show="ShowEmployeeData">Salary: {{Salary}}</span><br />
+                    <span ng-show="ShowEmployeeData">Benefits: {{Benefits}}</span><br />
+                    <span ng-show="ShowEmployeeData">Remaining Vacation Days: {{RemainingVacationDays}}</span><br />
+
+                   
+
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+@section scripts {
+    @Scripts.Render("~/Scripts/angular.js")
+    @Scripts.Render("~/app/Employeecontroller.js")
+}

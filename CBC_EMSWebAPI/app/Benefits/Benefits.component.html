@@ -1,0 +1,10 @@
+﻿<h1>List of Benefits ({{mode}})</h1>
+<h3>Benefits:</h3>
+<ul>
+    <li *ngFor="let Benefit of Benefits">{{Benefit.name}}</li>
+</ul>
+
+<label>New Benefit name: <input #newBenefitName /></label>
+<button (click)="addBenefit(newBenefitName.value); newBenefitName.value=''">Add Benefit</button>
+
+<p class="error" *ngIf="errorMessage">{{errorMessage}}</p>
